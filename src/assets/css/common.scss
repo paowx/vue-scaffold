@@ -34,9 +34,14 @@ input[type="search"]::-webkit-search-cancel-button{
   display: none;
 }
 
-/*去除ios下椭圆边框样式*/
-input[type="search"]{
-  -webkit-appearance: none;
+/*去除ios下椭圆边框、阴影样式*/
+input[type="search"],input[type=submit],input[type=button],textarea{
+  -webkit-appearance:none;
+}
+
+/** 去除disabled后浏览器默认的黄色背景 */
+input:disabled{
+  background-color: transparent;
 }
 
 /*去除ios、android中可点击元素的高亮颜色*/
