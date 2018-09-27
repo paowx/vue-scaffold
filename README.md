@@ -1,6 +1,6 @@
 # vue-scaff
 
-> A Vue.js project
+> vue 脚手架
 
 ## Build Setup
 
