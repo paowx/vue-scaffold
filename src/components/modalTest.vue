@@ -1,7 +1,7 @@
 <template>
   <!--专家列表-->
   <div class="expert-list-warp">
-    <h1>modal滚动穿透问题的解决方案</h1>
+    <h2>modal滚动穿透问题的解决方案</h2>
     <div style="white-space: pre-wrap">
       房产频道，mask
       固然好沟通如火如荼
@@ -29,9 +29,6 @@
 
       被告人顾及他人还
       改变土豪进入韩国那边
-
-
-
 
 
       土豪分别仍然挺好
