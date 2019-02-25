@@ -148,6 +148,7 @@ export default {
     left: 0;
     #scroller{
       background: #f2f2f2;
+      -webkit-overflow-scrolling: touch;
     }
   }
 

@@ -8,6 +8,7 @@ import modalTest from '@/components/modalTest'
 Vue.use(Router)
 
 const router = new Router({
+  mode: 'history',
   routes: [
     { path: '/',
       name: 'Demo',
@@ -27,6 +28,8 @@ const router = new Router({
     }
   ]
 })
+
+console.log('host:::', window.HOST)
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title || 'vue scaffold'
