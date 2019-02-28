@@ -18,7 +18,7 @@ const CONTENT_TYPES = {
   json: 'application/json;charset=UTF-8'
 }
 
-export default{
+export default {
   install(Vue, options) {
     Vue.prototype.httpGet = (url, params = {}) => {
       return axios({

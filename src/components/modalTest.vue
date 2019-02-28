@@ -55,7 +55,6 @@ export default {
   mounted() {
   },
   components: {
-    vHeader,
     preview
   },
   methods: {

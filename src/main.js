@@ -121,7 +121,7 @@ new Vue({
   methods: {
     getSign () {
       let url = location.href.split('#')[0]
-      this.httpGet(this.API.getSignPackage, {url: url}).then((res) => {
+      this.httpGet(this.API.getSignPackage, { url: url }).then((res) => {
         if (res) {
           let data = res.data
           /* eslint-disable no-undef */

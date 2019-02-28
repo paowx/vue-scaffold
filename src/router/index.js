@@ -13,18 +13,18 @@ const router = new Router({
     { path: '/',
       name: 'Demo',
       component: Demo,
-      meta: {title: 'vue scaffold', keepLive: true}
+      meta: { title: 'vue scaffold', keepLive: true }
     },
     { path: '/list',
       name: 'List',
       component: List,
-      meta: {title: 'vue scaffold', keepLive: true}
+      meta: { title: 'vue scaffold', keepLive: true }
     },
     {
       path: '/modalTest',
       name: 'modalTest',
       component: modalTest,
-      meta: {title: 'modal滚动穿透问题的解决方案', keepLive: false}
+      meta: { title: 'modal滚动穿透问题的解决方案', keepLive: false }
     }
   ]
 })
