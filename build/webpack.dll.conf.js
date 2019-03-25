@@ -8,18 +8,19 @@ const vendors = [
 ]
 module.exports = {
   output: {
-    path:  path.resolve(__dirname,'../static/js'),
+    path:  path.resolve(__dirname,'dist'),
     filename:'[name].js',
     library: '[name]'
   },
   entry: {
     "lib": vendors
   },
+  mode: 'production',
   plugins: [
     new webpack.DllPlugin({
-      path: 'manifest.json',
+      context: __dirname,
       name: '[name]',
-      context: __dirname
+      path: 'manifest.json'
     }),
   ]
 }

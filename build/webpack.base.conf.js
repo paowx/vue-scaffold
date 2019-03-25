@@ -38,6 +38,9 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  performance: {
+    hints: false
+  },
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),

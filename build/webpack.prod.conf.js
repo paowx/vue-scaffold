@@ -136,10 +136,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       minChunks: 3
     }),*/
 
-    /*new webpack.DllReferencePlugin({
+    new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: require('./manifest.json')
-    }),*/
+    }),
 
     // copy custom static assets
     new CopyWebpackPlugin([
