@@ -138,9 +138,8 @@ const webpackConfig = merge(baseWebpackConfig, {
 
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require('./manifest.json')
+      manifest: path.resolve(__dirname, '../static', './manifest.json')
     }),
-
     // copy custom static assets
     new CopyWebpackPlugin([
       {

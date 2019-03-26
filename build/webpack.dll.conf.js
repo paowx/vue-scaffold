@@ -7,20 +7,20 @@ const vendors = [
   'axios'
 ]
 module.exports = {
-  output: {
-    path:  path.resolve(__dirname,'dist'),
-    filename:'[name].js',
-    library: '[name]'
-  },
+  mode: 'development',
   entry: {
     "lib": vendors
   },
-  mode: 'production',
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname,'../static'),
+    library: '[name]'
+  },
   plugins: [
     new webpack.DllPlugin({
       context: __dirname,
       name: '[name]',
-      path: 'manifest.json'
+      path: path.resolve(__dirname, '../static', 'manifest.json')
     }),
   ]
 }
