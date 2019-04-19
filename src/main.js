@@ -8,6 +8,7 @@ import store from './vuex/store'
 import API from './common/api.js'
 import http from './common/http.js'
 import util from './common/util'
+import directive from './common/directive'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -23,6 +24,8 @@ Vue.use(MintUI)
 // 设置api为全局变量
 Vue.use(API)
 Vue.use(http)
+//自定义的directive
+Vue.use(directive)
 // 把工具函数定义为全局
 Vue.prototype.util = util
 
