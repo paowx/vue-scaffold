@@ -5,6 +5,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Demo from '@/components/Demo'
 import List from '@/components/list/list'
 import modalTest from '@/components/modalTest'
+import luckDraw from '@/components/luckDraw'
 Vue.use(Router)
 
 const router = new Router({
@@ -25,6 +26,12 @@ const router = new Router({
       name: 'modalTest',
       component: modalTest,
       meta: { title: 'modal滚动穿透问题的解决方案', keepLive: false }
+    },
+    {
+      path: '/luckDraw',
+      name: 'luckDraw',
+      component: luckDraw,
+      meta: { title: '抽奖活动', keepLive: false }
     }
   ]
 })
