@@ -15,9 +15,6 @@
       </div>
     </div>
   </div>
-
-
-
   <div class="choujiang2-panel">
     <div class="choujiang-img">
       <img src="../assets/img/cjhj2-c.png">
