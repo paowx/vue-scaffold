@@ -3,6 +3,7 @@
     <p><router-link to="/list">list style(列表样式)</router-link></p>
     <p><router-link to="/modalTest">modal滚动穿透问题的解决方案</router-link></p>
     <p><router-link to="/luckDraw">抽奖互活动</router-link></p>
+    <p><router-link to="/loadMore">无限加载（适合移动端和pc端）</router-link></p>
   </div>
 </template>
 

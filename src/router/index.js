@@ -6,6 +6,7 @@ import Demo from '@/components/Demo'
 import List from '@/components/list/list'
 import modalTest from '@/components/modalTest'
 import luckDraw from '@/components/luckDraw'
+import loadMore from '@/components/loadMore'
 Vue.use(Router)
 
 const router = new Router({
@@ -32,11 +33,15 @@ const router = new Router({
       name: 'luckDraw',
       component: luckDraw,
       meta: { title: '抽奖活动', keepLive: false }
+    },
+    {
+      path: '/loadMore',
+      name: 'loadMore',
+      component: loadMore,
+      meta: { title: '无限加载', keepLive: false }
     }
   ]
 })
-
-console.log('host:::', window.HOST)
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title || 'vue scaffold'
