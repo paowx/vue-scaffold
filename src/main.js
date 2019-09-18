@@ -9,6 +9,8 @@ import API from './common/api.js'
 import http from './common/http.js'
 import directive from './common/directive'
 import utils from './common/utils'
+import MescrollVue from 'mescroll.js/mescroll.vue'
+import 'mescroll.js/mescroll.min.css'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -21,6 +23,7 @@ Vue.config.productionTip = false
 Vue.use(Vuex)
 Vue.use(vueAlloyTouch)
 Vue.use(MintUI)
+Vue.use(MescrollVue)
 // 设置api为全局变量
 Vue.use(API)
 Vue.use(http)

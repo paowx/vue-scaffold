@@ -7,6 +7,7 @@ import List from '@/components/list/list'
 import modalTest from '@/components/modalTest'
 import luckDraw from '@/components/luckDraw'
 import loadMore from '@/components/loadMore'
+import mescroll from '@/components/mescroll'
 Vue.use(Router)
 
 const router = new Router({
@@ -38,6 +39,12 @@ const router = new Router({
       path: '/loadMore',
       name: 'loadMore',
       component: loadMore,
+      meta: { title: '无限加载', keepLive: false }
+    },
+    {
+      path: '/mescroll',
+      name: 'mescroll',
+      component: mescroll,
       meta: { title: '无限加载', keepLive: false }
     }
   ]

@@ -16,6 +16,7 @@
   "dependencies": {
     "alloytouch": "^0.2.5",
     "axios": "^0.18.0",
+    "mescroll.js": "^1.4.1",
     "mint-ui": "^2.2.13",
     "moment": "^2.22.2",
     "vue": "^2.5.2",
