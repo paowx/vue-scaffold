@@ -1,3 +1,4 @@
+<!--
 <template>
   <div class="mescroll-warp">
     <h2>下面是滚动区域</h2>
@@ -76,3 +77,4 @@ export default {
     }
   }
 </style>
+-->

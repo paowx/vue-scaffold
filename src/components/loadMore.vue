@@ -2,12 +2,16 @@
   <!--上拉加载更多功能-->
 <div class="load-more-warp">
   <div class="fiexd-div">
-    <p>body.clientHeight: {{clientHeight1}}, documentElement.clientHeight: {{clientHeight2}}</p>
-    <p>body.offsetHeight: {{offsetHeight1}}, documentElement.offsetHeight: {{offsetHeight2}}</p>
-    <p>innerHeight: {{innerHeight}}</p>
-    <p>body.scrollHeight: {{scrollHeight1}}, documentElement.scrollHeight: {{scrollHeight2}}</p>
-    <p>pageYOffset: {{pageYOffset}}</p>
-    <p>body.scrollTop: {{scrollTop1}}, documentElement.scrollTop: {{scrollTop2}}</p>
+    <p>document.body.clientHeight: {{clientHeight1}}</p>
+    <p>document.documentElement.clientHeight: {{clientHeight2}}</p>
+    <p>window.innerHeight: {{innerHeight}}</p>
+    <p>document.body.offsetHeight: {{offsetHeight1}}</p>
+    <p>document.documentElement.offsetHeight: {{offsetHeight2}}</p>
+    <p>document.body.scrollHeight: {{scrollHeight1}}</p>
+    <p>document.documentElement.scrollHeight: {{scrollHeight2}}</p>
+    <p>window.pageYOffset: {{pageYOffset}}</p>
+    <p>document.body.scrollTop: {{scrollTop1}}</p>
+    <p>document.documentElement.scrollTop: {{scrollTop2}}</p>
   </div>
   <div class="list">
     <div class="item" v-for="item in list" :key="item">{{item}}</div>
@@ -41,9 +45,9 @@ export default {
       let offsetHeight = document.getElementsByClassName('load-more-warp')[0].offsetHeight
       this.getOffsetHeight()
       console.log(offsetHeight, this.getClientHeight())
-      if (offsetHeight < this.getClientHeight()) {
-        this.fetchData()
-      }
+//      if (offsetHeight < this.getClientHeight()) {
+//        this.fetchData()
+//      }
     }, 1500)
     window.onscroll = () => {
       this.getOffsetHeight()
@@ -104,6 +108,12 @@ export default {
 </script>
 
 <style lang="scss">
+  body{
+    /*padding: 10px !important;*/
+    /*border-bottom: solid 10px red;*/
+    height: 100%;
+    overflow: scroll;
+  }
 .load-more-warp{
   font-size: .7rem;
   padding: 1rem;
