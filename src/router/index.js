@@ -8,6 +8,7 @@ import modalTest from '@/components/modalTest'
 import luckDraw from '@/components/luckDraw'
 import loadMore from '@/components/loadMore'
 import mescroll from '@/components/mescroll'
+import textAllShow from '@/components/textAllShow'
 Vue.use(Router)
 
 const router = new Router({
@@ -46,6 +47,12 @@ const router = new Router({
       name: 'mescroll',
       component: mescroll,
       meta: { title: '无限加载', keepLive: false }
+    },
+    {
+      path: '/textAllShow',
+      name: 'textAllShow',
+      component: textAllShow,
+      meta: { title: '查看全部-收起', keepLive: false }
     }
   ]
 })

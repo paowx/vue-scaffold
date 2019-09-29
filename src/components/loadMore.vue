@@ -45,9 +45,9 @@ export default {
       let offsetHeight = document.getElementsByClassName('load-more-warp')[0].offsetHeight
       this.getOffsetHeight()
       console.log(offsetHeight, this.getClientHeight())
-//      if (offsetHeight < this.getClientHeight()) {
-//        this.fetchData()
-//      }
+      /*if (offsetHeight < this.getClientHeight()) {
+        this.fetchData()
+      }*/
     }, 1500)
     window.onscroll = () => {
       this.getOffsetHeight()

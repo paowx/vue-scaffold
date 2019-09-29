@@ -5,6 +5,7 @@
     <p><router-link to="/luckDraw">抽奖互活动</router-link></p>
     <p><router-link to="/loadMore">无限加载（适合移动端和pc端）</router-link></p>
     <p><router-link to="/mescroll">无限加载（mescroll）</router-link></p>
+    <p><router-link to="/textAllShow">"查看全部" - "收起"</router-link></p>
   </div>
 </template>
 
