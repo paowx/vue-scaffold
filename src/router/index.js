@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import HelloWorld from '@/components/HelloWorld'
-import Demo from '@/components/Demo'
-import List from '@/components/list/list'
-import modalTest from '@/components/modalTest'
-import luckDraw from '@/components/luckDraw'
-import loadMore from '@/components/loadMore'
-import mescroll from '@/components/mescroll'
-import textAllShow from '@/components/textAllShow'
+const Demo = () => import('@/components/Demo')
+const List = () => import('@/components/list/list')
+const modalTest = () => import('@/components/modalTest')
+const luckDraw = () => import('@/components/luckDraw')
+const loadMore = () => import('@/components/loadMore')
+const mescroll = () => import('@/components/mescroll')
+const textAllShow = () => import('@/components/textAllShow')
 Vue.use(Router)
 
 const router = new Router({
