@@ -9,6 +9,7 @@ const luckDraw = () => import('@/components/luckDraw')
 const loadMore = () => import('@/components/loadMore')
 const mescroll = () => import('@/components/mescroll')
 const textAllShow = () => import('@/components/textAllShow')
+const matching = () => import('@/components/matching')
 Vue.use(Router)
 
 const router = new Router({
@@ -53,6 +54,12 @@ const router = new Router({
       name: 'textAllShow',
       component: textAllShow,
       meta: { title: '查看全部-收起', keepLive: false }
+    },
+    {
+      path: '/matching',
+      name: 'matching',
+      component: matching,
+      meta: { title: '百度地图的使用', keepLive: false }
     }
   ]
 })
