@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { Toast } from 'mint-ui'
+import Router from 'vue-router'
 
 /**
  *  状态码
@@ -18,6 +19,28 @@ const CONTENT_TYPES = {
   json: 'application/json;charset=UTF-8'
 }
 
+function checkStatus(res) {
+  if (res.data && res.data.code === CODE.SUCCESS) {
+    return res.data
+  } else if (res.data.errcode === 2) {
+    if (is_weixn()) {
+      window.location.href = res.data.data
+    } else {
+      // let str = window.location.href
+      // let toUrl = str.split('#')[1]
+      Router.push({ name: 'login' })
+    }
+  }
+  if (res.data && res.data.code === CODE.ERROR) {
+    Toast({
+      message: res.data.error,
+      duration: 1500
+    })
+    return Promise.reject(res.data.error)
+  }
+  return Promise.reject(res.data)
+}
+
 export default {
   install(Vue, options) {
     Vue.prototype.httpGet = (url, params = {}) => {
@@ -25,22 +48,7 @@ export default {
         method: 'GET',
         url: url,
         params: params
-      }).then((res) => {
-        console.log(res)
-        if (res.data && res.data.code === CODE.SUCCESS) {
-          return res.data
-        } else if (res.data.errcode === 2) {
-          window.location.href = res.data.data
-        }
-        if (res.data && res.data.code === CODE.ERROR) {
-          Toast({
-            message: res.data.error,
-            duration: 1500
-          })
-          return Promise.reject(res.data.error)
-        }
-        return Promise.reject(res.data)
-      }).catch((error) => {
+      }).then(checkStatus).catch((error) => {
         console.log(typeof error)
         return Promise.reject(error)
       })
@@ -54,22 +62,7 @@ export default {
           'Content-Type': CONTENT_TYPES[contentType]
         },
         data: params
-      }).then((res) => {
-        console.log(res)
-        if (res.data && res.data.code === CODE.SUCCESS) {
-          return res.data
-        } else if (res.data.errcode === 2) {
-          window.location.href = res.data.data
-        }
-        if (res.data && res.data.code === CODE.ERROR) {
-          Toast({
-            message: res.data.error,
-            duration: 1500
-          })
-          return Promise.reject(res.data.error)
-        }
-        return Promise.reject(res.data)
-      }).catch((error) => {
+      }).then(checkStatus).catch((error) => {
         console.log(error)
         return Promise.reject(error)
       })
@@ -79,20 +72,7 @@ export default {
       return axios({
         method: 'DELETE',
         url: url
-      }).then(function (res) {
-        console.log(res)
-        if (res.data && res.data.code === CODE.SUCCESS) {
-          return res.data
-        }
-        if (res.data && res.data.code === CODE.ERROR) {
-          Toast({
-            message: res.data.error,
-            duration: 1500
-          })
-          return Promise.reject(res.data.error)
-        }
-        return Promise.reject(res.data)
-      }).catch(function (error) {
+      }).then(checkStatus).catch(function (error) {
         console.log(error)
         return Promise.reject(error)
       })
@@ -103,24 +83,10 @@ export default {
         method: 'PUT',
         url: url,
         data: params
-      }).then(function (res) {
-        console.log(res)
-        if (res.data && res.data.code === CODE.SUCCESS) {
-          return res.data
-        }
-        if (res.data && res.data.code === CODE.ERROR) {
-          Toast({
-            message: res.data.error,
-            duration: 1500
-          })
-          return Promise.reject(res.data.error)
-        }
-        return Promise.reject(res.data)
+      }).then(checkStatus).catch(function (error) {
+        console.log(error)
+        return Promise.reject(error)
       })
-        .catch(function (error) {
-          console.log(error)
-          return Promise.reject(error)
-        })
     }
   }
 }

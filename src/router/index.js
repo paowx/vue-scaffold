@@ -10,6 +10,7 @@ const loadMore = () => import('@/components/loadMore')
 const mescroll = () => import('@/components/mescroll')
 const textAllShow = () => import('@/components/textAllShow')
 const matching = () => import('@/components/matching')
+const login = () => import('@/components/login')
 Vue.use(Router)
 
 const router = new Router({
@@ -35,7 +36,7 @@ const router = new Router({
       path: '/luckDraw',
       name: 'luckDraw',
       component: luckDraw,
-      meta: { title: '抽奖活动', keepLive: false }
+      meta: { title: '抽奖活动', keepLive: false, requireauth: false }
     },
     {
       path: '/loadMore',
@@ -60,18 +61,34 @@ const router = new Router({
       name: 'matching',
       component: matching,
       meta: { title: '百度地图的使用', keepLive: false }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login,
+      meta: { title: '登录', keepLive: false }
     }
   ]
 })
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title || 'vue scaffold'
-  let shareTit = '房知了-买房有疑问？来问就知了！'
-  let shareDesc = '汇集地产界十几年经验专业大咖，不管买房卖房投资还是贷款，不懂就来问吧。'
-  let shareLink = location.href.split('#')[0]
-  let shareImgUrl = location.protocol + '//' + location.hostname + '/weixin_public/static/images/shareLogo.jpg'
-  window.setShare(shareTit, shareDesc, shareLink, shareImgUrl)
-  next()
+  console.log(to)
+  // 路由拦截
+  let token = localStorage.getItem('token')
+  if (to.meta.requireauth && !token) {
+    next({
+      path: '/login',
+      query: { redirect: to.fullPath }
+    })
+  } else {
+    let shareTit = '房知了-买房有疑问？来问就知了！'
+    let shareDesc = '汇集地产界十几年经验专业大咖，不管买房卖房投资还是贷款，不懂就来问吧。'
+    let shareLink = location.href.split('#')[0]
+    let shareImgUrl = location.protocol + '//' + location.hostname + '/weixin_public/static/images/shareLogo.jpg'
+    window.setShare(shareTit, shareDesc, shareLink, shareImgUrl)
+    next()
+  }
 })
 
 router.afterEach(route => {
