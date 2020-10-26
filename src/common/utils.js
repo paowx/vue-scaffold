@@ -117,3 +117,60 @@ export default {
     return JSON.parse(localStorage[obj])
   }
 }
+
+export function isPc() {
+  if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    return false
+  } else {
+    return true
+  }
+}
+
+export function isAndroid() {
+  return navigator.userAgent.match(/Android/i) ? true : false
+}
+
+export function isMobile() {
+  let mobileArry = ['iPhone', 'iPad', 'Android', 'Windows Phone', 'BB10; Touch', 'BB10; Touch', 'PlayBook', 'Nokia']
+  let ua = navigator.userAgent
+  let res = mobileArry.filter(function(arr) {
+    return ua.indexOf(arr) > 0
+  })
+  return res.length > 0
+}
+
+export function isMobileQQ() {
+  var ua = navigator.userAgent
+  return /(iPad|iPhone|iPod).*? (IPad)?QQ\/([\d\.]+)/.test(ua) || /\bV1_AND_SQI?_([\d\.]+)(.*? QQ\/([\d\.]+))?/.test(ua)
+}
+
+export function isIOS() {
+  return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false
+}
+
+export function getIOSVersion() {
+  var ua = navigator.userAgent
+  return ua.match(/OS (\d+)_\d[_\d]* like Mac OS X/i)
+}
+
+export function isWx(data) {
+  return navigator.userAgent.match(/micromessenger/i) ? true : false
+}
+
+export function isMiniProgram() {
+  return (navigator.userAgent.match(/micromessenger/i) && navigator.userAgent.match(/miniprogram/i)) || window.__wxjs_environment === 'miniprogram'
+}
+
+export function getQueryVariable(variable) {
+  let query = window.location.search.substring(1)
+  let vars = query.split('&')
+  for (let i = 0; i < vars.length; i++) {
+    let pair = vars[i].split('=')
+    if (pair[0] === variable) {
+      return pair[1]
+    }
+  }
+  return ''
+}
+
+

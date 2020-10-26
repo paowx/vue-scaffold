@@ -12,14 +12,14 @@ import utils from './common/utils'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-import vueAlloyTouch from 'alloytouch/vue/alloy_touch.vue'
+// import vueAlloyTouch from 'alloytouch/vue/alloy_touch.vue'
 
 import './assets/css/common.scss'
 
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
-Vue.use(vueAlloyTouch)
+// Vue.use(vueAlloyTouch)
 Vue.use(MintUI)
 // 设置api为全局变量
 Vue.use(API)

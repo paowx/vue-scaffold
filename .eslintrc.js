@@ -38,5 +38,7 @@ module.exports = {
     "no-debugger": "warn",
     "no-multiple-empty-lines": [1, {"max": 2}], // 空行最多不能超过2行
     "spaced-comment": 0, //注释风格要不要有空格什么的
+    "no-unneeded-ternary": 0,
+    "no-useless-escape": 0
   }
 }
